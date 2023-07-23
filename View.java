@@ -203,22 +203,8 @@ public class View extends JFrame {
         btnClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    String id = tfId.getText();
-                    PreparedStatement pstmtDelete = db.getPreparedDeleteStatement();
-                    if (db.idExsits(id)) {
-                        pstmtDelete.setString(1, id);
-                        pstmtDelete.executeUpdate();
-                        setPrompt("The record is deleted successfully");
-                        clearTextFields();
-                    }
-                    else {
-                        setPrompt("Record not found");
-                        clearTextFields();
-                    }
-                } catch (SQLException se) {
-                    se.printStackTrace();
-                }
+                setPrompt("");
+                clearTextFields();
             }
         });
 

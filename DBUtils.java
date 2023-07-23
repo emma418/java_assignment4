@@ -32,10 +32,6 @@ public class DBUtils {
                                 "WHERE id = ?";
         return connection.prepareStatement(pstmtUpdate);
     }
-    public PreparedStatement getPreparedDeleteStatement() throws SQLException {
-        String pstmtDelete = "DELETE FROM Staff WHERE id = ?";
-        return connection.prepareStatement(pstmtDelete);
-    }
 
     public boolean idExsits(String id) throws SQLException {
         PreparedStatement checkId = connection.prepareStatement("SELECT * FROM Staff WHERE id = ?");
